@@ -1,0 +1,107 @@
+:root{
+    --my-title-color: rgb(249, 94, 22);
+    --my-primary-color:rgb(30, 41, 77);
+    --my-secondary-color: rgb(107, 133, 144);
+    --my-bg-color: rgb(241, 245, 249);
+    --my-icon-color: rgb(30, 41, 59);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.dark_mode{
+    --my-title-color: rgb(249, 94, 22);
+    --my-primary-color:rgb(241, 245, 249);
+    --my-secondary-color: rgb(241, 245, 249);
+    --my-bg-color: rgb(30, 41, 59);
+    --my-icon-color: rgb(241, 245, 249);
+}
+
+header{
+    height: 100vh;
+    padding-left: 128px;
+    padding-right: 128px;
+    padding-top: 132px;
+    background-color: var(--my-bg-color);
+
+    #theme_switch{
+        font-size: 32px;
+        background: none;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 40px;
+        right: 128px;
+        color: var(--my-icon-color);
+        cursor: pointer;
+    }
+
+    .hero{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        .me{
+            color: var(--my-secondary-color);
+            font-size: 16px;
+    
+        }
+        .title{
+            color: var(--my-title-color);
+            font-size: 40px ;
+            margin: 20px 0;
+        }
+        .disription{
+            font-size: 22px;
+            color: var(--my-primary-color);
+            max-width: 360px;
+            margin-bottom: 32px;
+        }
+        .image{
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .social {
+            padding-bottom: 15px;
+            font-size: 20px;
+
+            a{
+                margin-right: 10px ;
+                color:var(--my-icon-color)
+            }
+        }
+    }
+}
+
+#theme_switch :last-child{
+    display: none;
+}
+#theme_switch :first-child{
+    display: block;
+}
+
+.dark_mode #theme_switch :first-child{
+    display: none;
+}
+.dark_mode #theme_switch :last-child{
+    display: block;
+}
+
+@media screen and (max-width: 992px){
+    header{
+        padding: 0 20px;
+        padding-top: 100px;
+
+        #theme_switch{
+            right: 25px;
+
+        }
+    }
+    .hero{
+        flex-direction: column;
+    }
+}
